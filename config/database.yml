@@ -1,4 +1,4 @@
-<% project_name = 'second-project' %>
+<% project_name = 'Second-project' %>
 
 default: &default
   adapter: postgresql
