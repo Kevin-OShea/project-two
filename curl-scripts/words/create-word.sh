@@ -1,16 +1,15 @@
 #!/bin/bash
 
-curl "http://localhost:4741/examples" \
+curl "http://localhost:4741/words" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "words": {
+    "word": {
       "text": "'"${TEXT}"'",
       "times_used": "'"${USED}"'",
-      "difficulty": "'"${DIFF}"'",
-      "user_id": "'"${USERID}"'"
+      "difficulty": "'"${DIFF}"'"
     }
   }'
 
