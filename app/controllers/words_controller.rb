@@ -50,7 +50,7 @@ class WordsController < OpenReadController
   end
 
   def word_params
-    params.require(:word).permit(:text)
+    params.require(:word).permit(:text, :times_used, :difficulty)
   end
 
   private :set_word, :word_params
