@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(version: 2020_02_21_155903) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string "text"
-    t.integer "times_used"
-    t.integer "difficulty"
+    t.string "text", null: false
+    t.integer "times_used", null: false
+    t.integer "difficulty", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_words_on_user_id"
   end
 
