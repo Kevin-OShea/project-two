@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> project
 class WordsController < OpenReadController
   before_action :set_word, only: %i[update destroy]
 
