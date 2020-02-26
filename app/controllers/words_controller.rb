@@ -1,4 +1,4 @@
-class WordsController < OpenReadController
+class WordsController < ProtectedController
   before_action :set_word, only: %i[update destroy]
 
   # GET /words
