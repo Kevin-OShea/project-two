@@ -1,13 +1,11 @@
 
-class WordsController < ProtectedController
+class WordsController < OpenReadController
   before_action :set_word, only: %i[update destroy]
 
   # GET /words
   # GET /words.json
   def index
-    puts 'current user below'
-    puts current_user
-    #@words = Word.where(:user_id => current_user.id)
+    #@words = Word.all
     @words = current_user.words.all
     render json: @words
   end
