@@ -1,11 +1,14 @@
+
 class WordsController < ProtectedController
   before_action :set_word, only: %i[update destroy]
 
   # GET /words
   # GET /words.json
   def index
-    # @words = Word.where(:user_id => current_user.id)
-    @words = Word.all
+    puts 'current user below'
+    puts current_user
+    #@words = Word.where(:user_id => current_user.id)
+    @words = current_user.words.all
     render json: @words
   end
 
@@ -19,7 +22,6 @@ class WordsController < ProtectedController
   # POST /words.json
   def create
     @word = current_user.words.build(word_params)
-
     if @word.save
       render json: @word, status: :created
     else
